@@ -1,0 +1,9 @@
+salve um arquivo com algum nome de arquivo com extensão .cpp
+exemplo: hello.cpp
+
+Se você tiver um ambiente Linux ou Mac com recursos de desenvolvimento, poderá compilar qualquer um dos exemplos diretamente de um terminal apenas incluindo sinalizadores C++ 11 no comando do compilador:
+
+Compilador: GCC 
+Plataforma: Linux, among others...	
+Comando:    g++ -std=c++0x hello.cpp -o example_program
+
