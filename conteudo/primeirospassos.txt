@@ -1,0 +1,225 @@
+// my first program in C++
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hello World!";
+}
+
+
+#include <iostream> instrui o pré-processador a incluir uma seção do código C++ padrão, conhecido como cabeçalho iostream, que permite realizar operações de entrada e saída padrão
+
+std::cout, que identifica o dispositivo de saída de caracteres padrão (normalmente, esta é a tela do computador). Em segundo lugar, o operador de inserção (<<), que indica que o que se segue é inserido em std::cout. Por fim, uma frase entre aspas ("Hello world!") é o conteúdo inserido na saída padrão.
+
+cout faz parte da biblioteca padrão e todos os elementos na biblioteca C++ padrão são declarados dentro do que é chamado de namespace: o namespace std.
+
+
+
+using namespace std;
+
+A declaração acima permite que todos os elementos no namespace std sejam acessados ​​de maneira não qualificada (sem o prefixo std::).
+
+EXEMPLO:
+
+// my second program in C++
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  cout << "Hello World! ";
+  cout << "I'm a C++ program";
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+TIPOS DE DADOS FUNDAMENTAIS:
+
+Tipos de dados fundamentais são tipos básicos implementados diretamente pela linguagem que representam as unidades básicas de armazenamento suportadas nativamente pela maioria dos sistemas. Eles podem ser classificados principalmente em:
+
+-Tipos de caracteres: podem representar um único caractere, como 'A' ou '$'. O tipo mais básico é char, que é um caractere de um byte. Outros tipos também são fornecidos para caracteres mais largos.
+-Tipos numéricos inteiros: eles podem armazenar um valor de número inteiro, como 7 ou 1024. Eles existem em vários tamanhos e podem ser assinados ou não, dependendo se suportam valores negativos ou não.
+-Tipos de ponto flutuante: podem representar valores reais, como 3,14 ou 0,01, com diferentes níveis de precisão, dependendo de qual dos três tipos de ponto flutuante é usado.
+-Tipo booleano: O tipo booleano, conhecido em C++ como bool, pode representar apenas um dos dois estados, verdadeiro ou falso.
+
+Tipos de caracteres: 
+char	     Exatamente um byte de tamanho. Pelo menos 8 bits
+char16_t	 Não menor que char. Pelo menos 16 bits
+char32_t	 Não menor que char16_t. Pelo menos 32 bits
+wchar_t	     Pode representar o maior conjunto de caracteres suportado
+
+
+Tipos inteiros (com sinal):
+signed char	            Mesmo tamanho de char. Pelo menos 8 bits.
+signed short int	    Não menor que char. Pelo menos 16 bits.
+signed int	            Não menor que short. Pelo menos 16 bits.
+signed long int	        Não menor que int. Pelo menos 32 bits.
+signed long long int    Não menor do que long. Pelo menos 64 bits
+
+Tipos inteiros (sem sinal):
+unsigned char	          (mesmo tamanho que suas contrapartes assinadas)
+unsigned short int        (mesmo tamanho que suas contrapartes assinadas)
+unsigned int              (mesmo tamanho que suas contrapartes assinadas)
+unsigned long int         (mesmo tamanho que suas contrapartes assinadas)
+unsigned long long int    (mesmo tamanho que suas contrapartes assinadas)
+
+Tipos de ponto flutuante:
+float	
+double	                  Precisão não inferior a float
+long double         	  Precisão não inferior a double
+
+Boolean type:
+bool 
+
+Tipo vazio:
+void                     nenhum armazenamento
+
+Ponteiro nulo:
+decltype(nullptr)
+
+
+
+Se o tamanho ou a precisão do tipo não for uma preocupação, então char, int e double são normalmente selecionados para representar caracteres, inteiros e valores de ponto flutuante, respectivamente. Os demais tipos em seus respectivos grupos são utilizados apenas em casos muito particulares.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Declaração de variáveis:
+
+C++ é uma linguagem fortemente tipada e requer que cada variável seja declarada com seu tipo antes de seu primeiro uso. Isso informa ao compilador o tamanho a ser reservado na memória para a variável e como interpretar seu valor. A sintaxe para declarar uma nova variável em C++ é direta: simplesmente escrevemos o tipo seguido do nome da variável (ou seja, seu identificador). 
+Por exemplo:
+
+int a;
+float mynumber;
+
+Se declarar mais de uma variável do mesmo tipo, todas elas podem ser declaradas em uma única instrução, separando seus identificadores com vírgulas.
+Por exemplo:
+int a, b, c;
+
+Para ver como são as declarações de variáveis ​​em ação dentro de um programa, vamos dar uma olhada em todo o código C++ do exemplo
+
+ENTRADA:
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  // declaring variables:
+  int a, b;
+  int result;
+
+  // process:
+  a = 5;
+  b = 2;
+  a = a + 1;
+  result = a - b;
+
+  // print out the result:
+  cout << result;
+
+  // terminate the program:
+  return 0;
+}
+SAIDA:
+4
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Inicialização de variáveis:
+
+Quando as variáveis ​​do exemplo acima são declaradas, elas têm um valor indeterminado até que recebam um valor pela primeira vez. Mas é possível que uma variável tenha um valor específico a partir do momento em que é declarada. Isso é chamado de inicialização da variável.
+
+The first one, known as c-like initialization (because it is inherited from the C language), consists of appending an equal sign followed by the value to which the variable is initialized:
+
+type identifier = initial_value;
+
+Por exemplo, para declarar uma variável do tipo int chamada x e inicializá-la com valor zero a partir do momento em que é declarada, podemos escrever:
+int x = 0;
+
+Um segundo método, conhecido como inicialização do construtor (introduzido pela linguagem C++), coloca o valor inicial entre parênteses (()):
+type identifier (initial_value);
+Por exemplo:
+int x (0);
+
+Finalmente, um terceiro método, conhecido como inicialização uniforme, semelhante ao anterior, mas usando chaves ({}) em vez de parênteses 
+Por exemplo:
+int x {0};
+
+ENTRADA:
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  int a=5;               // initial value: 5
+  int b(3);              // initial value: 3
+  int c{2};              // initial value: 2
+  int result;            // initial value undetermined
+
+  a = a + b;
+  result = a - c;
+  cout << result;
+
+  return 0;
+}
+SAIDA:
+6
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Tipo de dedução: auto e decltype:
+
+Quando uma nova variável é inicializada, o compilador pode descobrir qual é o tipo da variável automaticamente pelo inicializador. Para isso, basta usar auto como especificador de tipo para a variável:
+
+int foo = 0;
+auto bar = foo;
+
+Aqui, bar é declarado como tendo o mesmo tipo de foo.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Introdução às string:
+
+Um exemplo de tipo composto é a classe string. Variáveis ​​desse tipo são capazes de armazenar sequências de caracteres, como palavras ou frases. Um recurso muito útil!
+
+Uma primeira diferença com os tipos de dados fundamentais é que para declarar e usar objetos (variáveis) desse tipo, o programa precisa incluir o cabeçalho onde o tipo é definido dentro da biblioteca padrão
+
+EXEMPLO)
+ENTRADA:
+// my first string
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main ()
+{
+  string mystring;
+  mystring = "This is a string";
+  cout << mystring;
+  return 0;
+}
+SAIDA: 
+This is a string
+
+
+Strings também podem executar todas as outras operações básicas que os tipos de dados fundamentais podem, como ser declarado sem um valor inicial e alterar seu valor durante a execução:
+
+exemplo)
+EENTRADA:
+// my first string
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main ()
+{
+  string mystring;
+  mystring = "This is the initial string content";
+  cout << mystring << endl;
+  mystring = "This is a different string content";
+  cout << mystring << endl;
+  return 0;
+}
+SAIDA:
+This is the initial string content
+This is a different string content
+
