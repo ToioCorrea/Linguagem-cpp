@@ -1,0 +1,46 @@
+FORMA GERAL DAS FUNÇÕES C++
+
+tipo        nome()
+
+{
+    instrução_1 ;
+    instrução_2 ;
+        .
+        .
+    instrução_n ;    
+}
+
+O PRIMEIRO PROGRAMA:
+
+#include <iostream.h>
+{
+    cout << "Primeiro Programa" ;
+}
+
+salvar com o sufixo .cpp;
+
+cout = O objeto cout representa o stream de saída no C++.Este stream é uma espécie de seqüência (fluxo) de dados a serem impressos na tela. Para realizar a impressão, usa-se o "operador de inserção" que "insere" dados dentro do stream.
+
+O operado "<<" conecta a mensagem a ser impressa á cout.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+INICIALIZANDO VARIÁVEIS:
+
+
+ENTRADA:
+#include <iostream.h>
+main()
+{
+    int evento = 5;
+    char corrida = 'C';
+    float tempo = 27.5;
+
+    cout << "\nO tempo vitorioso na eleminatoria " << corrida << "\nda competição " << evento <<  
+    "foi " << tempo<< '.'; 
+
+}
+SAÍDA:
+O tempo vitorioso na eliminatoria c
+da competição 5 foi 27.5.
+
