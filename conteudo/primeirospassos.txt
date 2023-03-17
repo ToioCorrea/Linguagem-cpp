@@ -1,3 +1,13 @@
+CLASSES E OBJETOS:
+
+Uma classe é considerada um tipo de dado como os tipos que existem predefinidos em compiladores de diversas linguagens de programação.
+Uma variável de uma classe é chamada objeto e conterá campos de dados e funções 
+
+POLIMORFISMO:
+Uso de unico nome para definir várias forma distintas; cada uma tem o código independente 
+
+
+
 // my first program in C++
 #include <iostream>
 
