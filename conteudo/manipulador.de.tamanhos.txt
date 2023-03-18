@@ -1,0 +1,156 @@
+MANIPULADORES DE TAMANHO DE CAMPOS NA IMPRESSÃO:
+
+Os manipuladores de tamanho de campos estão definidos no arquivo "iomapip.h":
+
+setw = Seleciona o tamanho próximo campo a ser impresso
+
+setprecision = Define o numero de casas decimais a serem impressas para numeros em ponnto-flutuante
+
+setfill = seleciona o caracter que devera preencher as colunas em branco de um campo
+
+
+EXEMPLOS:
+
+Programa que não utiliza tamanho de campos:
+
+ENTRADA:
+
+#include <iostream.h>
+void main()
+{
+    int lap=45, bor=2345, can=420, cad=8, fit=13050;
+    cout << "\n\n\n";
+    cout << '\n' << "Lapis     "<< lap;
+    cout << '\n' << "Borracha  "<< bor;
+    cout << '\n' << "Canetas   "<< can;
+    cout << '\n' << "Cadernos  "<< cad;
+    cout << '\n' << "Fitas     "<< fit;
+}
+SAIDA:
+Lapis    45
+Borracha 2345
+Canetas  420
+CAdernos 8
+Fitas    1350
+
+UTILIZA <iomanip.h>
+
+ENTRADA:
+#include <iostream.h>
+#iclude <iomanip.h>
+void main()
+{
+    int lap=45, bor=2345, can=420, cad=8, fit=13050;
+    cout << "\n\n\n";
+    cout << '\n' << "Lapis     "<< setw(12) << lap;
+    cout << '\n' << "Borracha  "<< setw(12) << bor;
+    cout << '\n' << "Canetas   "<< setw(12) << can;
+    cout << '\n' << "Cadernos  "<< setw(12) << cad;
+    cout << '\n' << "Fitas     "<< setw(12) << fit;
+}
+SAIDA:
+Lapis               45
+Borracha          2345
+Canetas            420
+CAdernos             8
+Fitas             1350
+
+
+O PROXIMO EXEMPLO PREENCHE AS COLUNAS EM BRANCO COM O CARACTER '.'
+
+ENTRADA:
+ENTRADA:
+#include <iostream.h>
+#iclude <iomanip.h>
+void main()
+{
+    int lap=45, bor=2345, can=420, cad=8, fit=13050;
+    cout << "\n\n\n";
+    cout << setfill('.');
+    cout << '\n' << "Lapis     "<< setw(12) << lap;
+    cout << '\n' << "Borracha  "<< setw(12) << bor;
+    cout << '\n' << "Canetas   "<< setw(12) << can;
+    cout << '\n' << "Cadernos  "<< setw(12) << cad;
+    cout << '\n' << "Fitas     "<< setw(12) << fit;
+}
+SAIDA:
+Lapis    ...........45
+Borracha .........2345
+Canetas  ..........420
+CAdernos ............8
+Fitas    .........1350
+
+
+
+PODE DEFINIR O NUMERO DE CASAS DECIMAIS A SEREM IMPRESSAS PARA OBTER PRECISÃO E ARREDONDAMENTO:
+
+NTRADA:
+#include <iostream.h>
+#iclude <iomanip.h>
+void main()
+{
+    int lap=4.875, bor=234.542, can=42.036, cad=8.0, fit=13.05;
+    cout << "\n\n\n";
+    cout << setprecision(2;)
+    cout << '\n' << "Lapis     "<< setw(12) << lap;
+    cout << '\n' << "Borracha  "<< setw(12) << bor;
+    cout << '\n' << "Canetas   "<< setw(12) << can;
+    cout << '\n' << "Cadernos  "<< setw(12) << cad;
+    cout << '\n' << "Fitas     "<< setw(12) << fit;
+}
+SAIDA:
+Lapis             4.88
+Borracha        234.54
+Canetas          42.04
+CAdernos          8.00
+Fitas            13.05
+
+
+TAMANHO DE CAMPOS COM CADEIAS DE CARACTERES:
+
+O manioulador setw justifica campos numericos e cadeias de caracteres a direita no campo de impressão definido.
+
+ENTRADA:
+#include <iostream.h>
+#iclude <iomanip.h>
+void main()
+{
+    cout << "\n\n\n";
+    cout << "objwto   "<< SETW(12) << "codigo" << '\n';
+    cout << '\n' << "Lapis     "<< setw(12) << "WQR";
+    cout << '\n' << "Borracha  "<< setw(12) << "ASO";
+    cout << '\n' << "Canetas   "<< setw(12) << "KPX";
+    cout << '\n' << "Cadernos  "<< setw(12) << "FJI";
+    cout << '\n' << "Fitas     "<< setw(12) << "TYE";
+}
+SAIDA:
+Lapis              WQR
+Borracha           ASO
+Canetas            KPX
+CAdernos           FGI
+Fitas              TYE
+
+
+MANIPULADORES DE BASES NUMÉRICAS:
+
+dec = A impressão do próximo campo é apresentada em decimal(modo default)
+
+hex = A impressão do próximo campo é apresentada em hexadecimal
+
+oct = A impressão do próximo campo é apresentada em octal
+
+EXEMPLO)
+
+ENTRADA:
+#include <iostream.h>
+void main()
+{
+    int n = 65;
+    cout << "Hexadecimal " << hex << n;
+    cout << "Octal       " << oct << n;
+    cout << "Deciaml     " << dec << n;
+}
+SAIDA:
+Hexadecimal 41
+Octal      101
+Decimal     65
