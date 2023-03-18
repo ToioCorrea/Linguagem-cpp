@@ -1,0 +1,25 @@
+IMPRIMINDO CARACTERES GRÁFICOS:
+
+A forma de repressentar um caractere de código acima de 127 é:
+
+\xdd
+
+dd = representa o dódigo fo caracter na base hexadecimal
+
+\xdd é um caractere e pode ser contido por uma cadeia de caracteres entre aspas duplas.
+
+EXEMPLO)
+
+#include <iostream.h>
+using namespace std;
+
+int main()
+{
+    cout << "\n\n";
+    cout << "\n \xDC\xDC\xDB\xDB\xDB\xDB\xDC\xDC";
+    cout << "\n \xDF\xDF\xDF\xDF\xDFO\zDF;
+
+    cout << "\n\n";
+}
+SAIDA:
+desenho de um CARRO
