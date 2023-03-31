@@ -1,0 +1,107 @@
+OPPERADOR DE ATRIBUIÇÃO
+
+Representa a atribuição da expressão á sua direita á variável á sua esquerda
+EXS:
+x = 2000;
+x = y = 3 
+y = (x = 3)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OPERADORES ARITMÉTICOS 
+
+BINÁRIOS:
++ Soma
+- Subtração
+* Multiplicação
+/ Divisão
+% Módulo
+
+UNÁRIO:
+-  Menos UNÁRIO
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+PRECEDÊNCIA
+
+n = Z + Y * x
+O operador * tem precedência a do operado +
+
+n = (z + y) * x.
+As expressão com Parênteses são avaliadas primeiro
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OPERADOR MENOS UNÁRIO: -
+
+Indica somente troca de sinal. Como se multiplicasse o operador por -1
+EX:
+x = -8;
+x = -x;
+
+x será 8.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LENDO COM cin E O OPERADOR DE EXTRAÇÃO >>
+
+cin = manipula toda entrada do teclado por meio do operador de extração >> que conecta a entrada de dados á variável que conterá.
+
+EX:
+
+ENTRADA:
+#include <iostream.h>
+void main()
+{
+    cout << '\nDigite a sua idade rm anos: " ;
+    int anos;
+
+    cin >> anos; // O operador >> toma o valor do objeto á sua esquerda e coloca na variável á direita
+
+    cout << "\nA sua idade em dias é: << (anos * 365);
+}
+SAIDA:
+Digite a sua idade em anos: 4
+A sua idade em dias é: 1460
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+MULTIPLAS ENTRADAS COM cin 
+
+#include <iostream>
+void main()
+{
+    cout << '\nDigite as notas das 4 provas: " ;
+    float p1,p2,p3,p4;
+
+    cin >> p1 >> p2 >> p3 >> p4 ; 
+
+    float media = (p1+p2+p3+p4) / 4.0;
+    cout << "\nMÉDIA: " << media;
+}
+SAÍDA:
+Digite as notas das 4 provas: 5.5 7.5 3.0 6.0
+MÉDIA: 5.5
+
+OBS: Multiplas entradas são digitadas separadas por um espaço em branco
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+O QUALIFICADOR const
+
+#include <iostream>
+void main()
+{
+    const char bip = '\a';
+    const double pi = 3.141592;
+    double raio;
+
+    cout << "\nDigite o raio da esfera: " ; 
+    cin >> raio;
+
+    double area =   4.0 * pi * raio * raio;
+
+    cout << bip << bip;
+    cout << "\nArea da esfera = " << area;
+}
