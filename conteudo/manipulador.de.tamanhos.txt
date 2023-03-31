@@ -167,3 +167,4 @@ void main()
     cin >> hex >> n ; 
     cout << "\nO numero em Decimal é " << dec << n;
 }
+
