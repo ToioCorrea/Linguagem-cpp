@@ -1,0 +1,24 @@
+AS FUNÇÕES getche() E getch()
+
+Leêm um caractere no instante em que é digitado, sem esperar[ENTER]
+
+Ex:
+
+ENTRADA:
+include <iostream>
+#include <conio> //As duas necessita do arquivo "conio.h"
+void main()
+{
+    char ch;
+    cout << '\nPressione um tecla ";
+    
+    ch = getche(); //Retorna o valor lido do teclado
+
+    cout << "\nA tecla sucessora ASCII é " << char(ch + 1);
+}
+SAÍDA:
+Pressione um tecla x
+A tecla sucessora ASCII é y
+
+getch() é similar, porém o caracter digitado não é impresso no video
+
