@@ -154,3 +154,16 @@ SAIDA:
 Hexadecimal 41
 Octal      101
 Decimal     65
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+MANIPULADORES DE BASES NUMÉRICAS: dec hex oct 
+
+#include <iostream>
+void main()
+{
+    int n;
+    cout << "\nDigite o numero em Hexadecimal ";
+    cin >> hex >> n ; 
+    cout << "\nO numero em Decimal é " << dec << n;
+}
