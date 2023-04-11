@@ -20,6 +20,43 @@ BINÁRIOS:
 UNÁRIO:
 -  Menos UNÁRIO
 
+x op= exp  EQUIVALE A x = x op (exp)
+
+EXEMPLOS:
+
+i += 2;     equivale a   i = i +2;
+x *= y+1    equivale a   x = x* (y+1)
+t /= 2.5    equivale a   t = t / 2.5;
+p %= 5      equivale a   p = p % 5;
+d -= 3      equivale a   d = d - 3;
+
+EXEMPLO:
+#include <iostream>
+void main()
+{
+    float nota,media = 0.0;
+    cout << "\nDigite a primeira nota: ";
+    cin >> nota;
+    media += nota;
+
+    cout << "\nDigite a segunda nota: ";
+    cin >> nota;
+    media += nota;
+
+    cout << "\nDigite a terceira nota: ";
+    cin >> nota;
+    media += nota;
+
+    cout << "\nDigite a quarta nota: ";
+    cin >> nota;
+    media += nota;
+
+    media \= 4.0;
+    cout << "\nMÉDIA: ' << media;
+
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 PRECEDÊNCIA
@@ -29,6 +66,26 @@ O operador * tem precedência a do operado +
 
 n = (z + y) * x.
 As expressão com Parênteses são avaliadas primeiro
+
+
+Os operadoradores unários têm precedência sobre os operadores binários:
+EQUIVALENTE:
+X = a * b++
+X = a * (b++)
+
+
+Operadores aritméticos são avaliados antes dos RELACIONAIS
+
+ENTRADA:
+#include <iostream>
+void main()
+{
+    cout << "\n" << (4+1<3) ;
+    cout << "\n" << (2<1+3) ;
+}
+SAÍDA:
+0
+1
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -119,4 +176,70 @@ Podemos usar:
 (int)ch ou int(ch)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OPERADORES DE INCREMENTO E DECREMENTO
+
+incremento(++) =  Adiciona 1  á variável
+decremento(--) =  Diminui  1  á variável
+
+prefixado  = aparece antes do nome da variável
+pós-fixado = aparece em seguida ao nome da variável
+
+EQUIVALENTE: Adiciona 1
+x = x + 1 ; 
+++X;
+X++;
+
+EXEMPLOS:
+
+ENTRADA:
+n = 5;
+x = ++n;
+
+count << '\nN=" << n << "   X=" << x;
+SAÍDA:
+N=6 X=6
+
+ENTRADA:
+n = 5;
+x = n++;
+cout << "\nN=" << n << "    X=" << x;
+SAÍDA:
+N=6    X=5
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OPERADORES RELACIONAIS
+
+> maior
+>= maior igual
+< menor
+<= menor igual
+== igual
+!= diferente
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OPERADORES LÓGICOS
+
+&& lógico E 
+|| lógico OU 
+! lógico NÃO 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OPERADOR CONDICIONAL TERNÁRIO
+
+exp1 ? exp2 : exp3
+
+EXEMPLO:
+
+max (a > b) ? a: b;
+a variável com maior valor numérico entre a e b será atribuída a max
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
